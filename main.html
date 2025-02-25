@@ -45,9 +45,9 @@
                     <img src="assets/money2.png" alt="" class="w-8 mx-auto">
                     <h3>Savings</h3>
                 </div>
-                <div class="box border-2 rounded-sm p-4 text-center">
+                <div id="transaction-history-box" class="box border-2 rounded-sm p-4 text-center">
                     <img src="assets/money3.png" alt="" class="w-8 mx-auto">
-                    <h3>Loan</h3>
+                    <h3>Transaction</h3>
                 </div>
             </div>
 
@@ -90,7 +90,7 @@
                     <div class="card-body">
                           <fieldset class="fieldset">
                             <label class="fieldset-label">Account Number</label>
-                            <input id="account-number" type="phone" class="input" placeholder="Phone Number" value="01615553632" required/>
+                            <input id="account-number-cashout" type="phone" class="input" placeholder="Phone Number" value="01615553632" required/>
                             <label class="fieldset-label">Amount</label>
                             <input id="cash-out-amount" type="phone" class="input" placeholder="type amount" value="" required/>
                             <label class="fieldset-label">Pin</label>
@@ -103,11 +103,20 @@
                 </div>
               </div>
         </section>
+
+        <section id="transaction-history" class="bg-gray-200">
+            <h2 class="text-3xl font-bold text-red-400 text-center p-3">Transaction History</h2>
+            <div id="transaction-container">
+
+            </div>
+        </section>
     </section>
 
 
     <script src="js/addMoney.js"></script>
     <script src="js/toggle.js"></script>
     <script src="js/cashout.js"></script>
+    <script src="js/utilities.js"></script>
+    <script src="js/transaction.js"></script>
 </body>
 </html>

@@ -1,12 +1,23 @@
 document.getElementById('add-money-btn').addEventListener('click', function(event) {
     event.preventDefault();
-    const amount = parseFloat(document.getElementById('amount').value);
-    const pin = document.getElementById('account-pin').value;
+    const amount = getInputValueID('amount');
+    const pin = getInputValueID('account-pin');
+    const accountNumber = getInputValueID('account-number');
 
-    if(pin === '1234') {
-        const mainAmount  = parseFloat(document.getElementById('main-amount').innerText);
+    if(amount < 0) {
+        alert('Invalid Amount');
+        return;
+    }
+
+    if(pin === 1234) {
+        const mainAmount = getTextValueID('main-amount');
         const sum = mainAmount + amount;
-        document.getElementById('main-amount').innerText = sum;
+        setInnerText('main-amount', sum);
+
+        const p = document.createElement('p');
+        p.innerText = `You have successfully added $${amount} to your account number ${accountNumber}`;
+        const container = document.getElementById('transaction-container');
+        container.appendChild(p);
     }
     else {
         alert('Invalid Pin');
